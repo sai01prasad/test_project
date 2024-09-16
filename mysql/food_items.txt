@@ -1,0 +1,15 @@
+CREATE TABLE `food_items` (
+  `food_id` int NOT NULL,
+  `food_item_name` varchar(205) NOT NULL,
+  `price_per_quantity` int NOT NULL,
+  `food_image` varchar(205) NOT NULL,
+  `food_description` varchar(205) NOT NULL,
+  `is_non_vegitarian` varchar(3) NOT NULL,
+  `is_eggitarian` varchar(3) NOT NULL,
+  `avg_rating` varchar(4) NOT NULL,
+  `cuisin_id` int NOT NULL,
+  `menu_id` int NOT NULL,
+  PRIMARY KEY (`food_id`),
+  KEY `menu_id_idx` (`menu_id`),
+  CONSTRAINT `menu_id` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`menu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -1,0 +1,7 @@
+CREATE TABLE `menu` (
+  `menu_id` int NOT NULL,
+  `res_id` int DEFAULT NULL,
+  PRIMARY KEY (`menu_id`),
+  KEY `res_id_idx` (`res_id`),
+  CONSTRAINT `res_id` FOREIGN KEY (`res_id`) REFERENCES `restaurantdetails` (`res_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
